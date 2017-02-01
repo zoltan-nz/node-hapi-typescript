@@ -1,0 +1,47 @@
+{
+  "name": "node-hapi-typescript",
+  "version": "1.0.0",
+  "description": "TypeScript2, Hapi Starter Kit",
+  "scripts": {
+    "clean": "rimraf lib .nyc-output coverage",
+    "lint": "tslint --force --fix \"src/**/*.ts\" \"test/**/*.ts\"",
+    "prebuild": "npm run lint",
+    "build": "rnpm run clean && echo Using TypeScript && tsc --version && tsc --pretty",
+    "pretest": "npm build",
+    "test": "mocha",
+    "testOnly": "mocha",
+    "test:coverage": "nyc npm test && open coverage/index.html",
+    "test:watch": "npm test -- --watch",
+    "prepare": "npm test",
+    "watch": "npm build -- --watch",
+    "server": "nodemon ./dist/bin/www",
+    "prestart": "npm build",
+    "start": "node ./dist/bin/www"
+  },
+  "dependencies": {
+    "nconf": "latest"
+  },
+  "devDependencies": {
+    "@types/mocha": "latest",
+    "@types/nconf": "latest",
+    "@types/node": "latest",
+    "@types/sinon": "latest",
+    "@types/sinon-chai": "latest",
+    "chai": "latest",
+    "coveralls": "latest",
+    "mocha": "latest",
+    "nodemon": "latest",
+    "nyc": "latest",
+    "rimraf": "latest",
+    "sinon": "latest",
+    "sinon-chai": "latest",
+    "ts-node": "latest",
+    "tslint": "latest",
+    "typescript": "latest"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 6",
+    "npm": ">= 4"
+  }
+}
